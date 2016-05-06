@@ -2,6 +2,8 @@ package com.express.service.center;
 
 import java.util.Map;
 
+import org.springframework.stereotype.Component;
+
 import com.express.service.base.ISelectService;
 
 /**
@@ -9,6 +11,7 @@ import com.express.service.base.ISelectService;
  * @author yuwenjin
  * @date 2016年5月6日
  */
+@Component
 public class CenterService {
 	private Map<String, ISelectService> partnerMap;
 	public Map<String, Object> selectReult(Map<String, Object> params){
