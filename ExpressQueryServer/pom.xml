@@ -120,8 +120,12 @@
 			<artifactId>jsoup</artifactId>
 			<version>1.9.1</version>
 		</dependency>
-
-
+		<!-- FAST JSON -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.11</version>
+		</dependency>
 		<!-- Testing dependencies <dependency> <groupId>org.springframework</groupId> 
 			<artifactId>spring-test</artifactId> <version>${springframework.version}</version> 
 			<scope>test</scope> </dependency> <dependency> <groupId>org.testng</groupId> 
@@ -132,9 +136,6 @@
 			<scope>test</scope> </dependency> <dependency> <groupId>dbunit</groupId> 
 			<artifactId>dbunit</artifactId> <version>${dbunit.version}</version> <scope>test</scope> 
 			</dependency> -->
-
-
-
 	</dependencies>
 	<build>
 		<sourceDirectory>src</sourceDirectory>

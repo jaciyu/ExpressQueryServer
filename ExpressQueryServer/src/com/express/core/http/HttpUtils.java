@@ -2,6 +2,7 @@ package com.express.core.http;
 
 import java.util.Random;
 
+import org.apache.http.Header;
 import org.apache.http.client.HttpClient;
 
 import com.tgb.ccl.http.common.HttpConfig;
@@ -44,7 +45,7 @@ public class HttpUtils {
 			return "";
 		}
 		try {
-			int uaIndex = randNumber(0,26);
+			int uaIndex = randNumber(0,23);
 			HttpConfig  config = HttpConfig.custom();
 			config.url(url);
 			HttpClient client = url.startsWith("https")?HCB.custom().timeout(TIME_OUT).ssl().setUserAgent(USER_AGENT[uaIndex]).build()
@@ -62,8 +63,36 @@ public class HttpUtils {
 			return "";
 		}
 		try {
-			int uaIndex = randNumber(0,26);
+			int uaIndex = randNumber(0,23);
 			HttpConfig  config = HttpConfig.custom();
+			config.url(url);
+			config.inenc(body);
+			HttpClient client = url.startsWith("https")?HCB.custom().timeout(TIME_OUT).ssl().setUserAgent(USER_AGENT[uaIndex]).build()
+					:HCB.custom().timeout(TIME_OUT).setUserAgent(USER_AGENT[uaIndex]).build();
+			config.client(client);
+			return HttpClientUtil.post(config);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "";		
+	}
+	/**
+	 * 自定义协议头，无需传ua
+	 * @param url
+	 * @param body
+	 * @param headers
+	 * @return
+	 */
+	public static String doPost(String url,String body,Header[] headers){
+		if(url==null||url.trim().length()==0){
+			return "";
+		}
+		try {
+			int uaIndex = randNumber(0,23);
+			HttpConfig  config = HttpConfig.custom();
+			if(headers!=null&&headers.length>0){
+				config.headers(headers);
+			}
 			config.url(url);
 			config.inenc(body);
 			HttpClient client = url.startsWith("https")?HCB.custom().timeout(TIME_OUT).ssl().setUserAgent(USER_AGENT[uaIndex]).build()
