@@ -15,7 +15,7 @@ import com.tgb.ccl.http.httpclient.builder.HCB;
  * @date 2016年5月6日
  */
 public class HttpUtils {
-	private static int TIME_OUT = 2000;
+	private static int TIME_OUT = 10000;
 	private static String[] USER_AGENT = {"Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)"
 		                                  ,"AppleWebKit/534.46 (KHTML,like Gecko) Version/5.1 Mobile Safari/10600.6.3 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)"
 		                                  ,"Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
