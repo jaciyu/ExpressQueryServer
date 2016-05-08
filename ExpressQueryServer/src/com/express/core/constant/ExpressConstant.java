@@ -19,14 +19,17 @@ public final class ExpressConstant {
 	public static int EXPRESS_SEND = 5;
 	public static int EXPRESS_RETURN = 6;
 	
-	public boolean checkText(String result){
-		String[] checkStrings ={"在途","揽件","疑难","签收","退签","派件","退回"};
-		for (String str : checkStrings) {
-			if(result.indexOf(str)!=-1){
-				return true;
-			}
+	public static String getStsteText(int state){
+		switch (state) {
+		case 0:return "运送中";
+		case 1:return "已收件";
+		case 2:return "疑难";
+		case 3:return "已签收";
+		case 4:return "用户拒签";
+		case 5:return "派送中";
+		case 6:return "退回中";
+		default:return "";
 		}
-		return false;
 	}
 	
 }
