@@ -93,6 +93,7 @@ public class HttpUtils {
 			if(headers!=null&&headers.length>0){
 				config.headers(headers);
 			}
+			config.body(body);
 			config.url(url);
 			config.inenc(body);
 			HttpClient client = url.startsWith("https")?HCB.custom().timeout(TIME_OUT).ssl().setUserAgent(USER_AGENT[uaIndex]).build()
